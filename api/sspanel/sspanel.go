@@ -10,7 +10,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/XrayR-project/XrayR/api"
+	"github.com/late0001/XrayR/api"
 	"github.com/go-resty/resty/v2"
 )
 
@@ -116,6 +116,8 @@ func (c *APIClient) GetNodeInfo() (nodeInfo *api.NodeInfo, err error) {
 	if err := json.Unmarshal(response.Data, nodeInfoResponse); err != nil {
 		return nil, fmt.Errorf("Unmarshal %s failed: %s", reflect.TypeOf(nodeInfoResponse), err)
 	}
+	//err = fmt.Errorf("jjjj Node type: %s", c.NodeType)
+	//log.Print(err);
 	switch c.NodeType {
 	case "V2ray":
 		nodeInfo, err = c.ParseV2rayNodeResponse(nodeInfoResponse)
@@ -287,6 +289,8 @@ func (c *APIClient) ParseV2rayNodeResponse(nodeInfoResponse *NodeInfoResponse) (
 	enableVless = c.EnableVless
 	var path, host, TLStype, transportProtocol string
 	if nodeInfoResponse.RawServerString == "" {
+		//err := fmt.Errorf("jjjj No server info in response")
+		//log.Print(err);
 		return nil, fmt.Errorf("No server info in response")
 	}
 	//nodeInfo.RawServerString = strings.ToLower(nodeInfo.RawServerString)
