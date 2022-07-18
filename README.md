@@ -50,17 +50,22 @@ A Xray backend framework that can easily support many panels.
 ## 软件安装
 ### 一键安装
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/late0001/XrayR-release/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/xrayr-project/XrayR-release/master/install.sh)
 ```
 ### 使用Docker部署软件
-[Docker部署教程](https://crackair.gitbook.io/late0001/xrayr-xia-zai-he-an-zhuang/install/docker)
+[Docker部署教程](https://crackair.gitbook.io/xrayr-project/xrayr-xia-zai-he-an-zhuang/install/docker)
 
 ### 手动安装
-[手动安装教程](https://crackair.gitbook.io/late0001/xrayr-xia-zai-he-an-zhuang/install/manual)
+[手动安装教程](https://crackair.gitbook.io/xrayr-project/xrayr-xia-zai-he-an-zhuang/install/manual)
+git clone https://github.com/late0001/XrayR
+cd XrayR/main
+go mod tidy
+go build -o XrayR -ldflags "-s -w"
+./XrayR -config config.yml
 
 ## 配置文件及详细使用教程
 
-[详细使用教程](https://crackair.gitbook.io/late0001/)
+[详细使用教程](https://crackair.gitbook.io/xrayr-project/)
 
 ## Thanks
 
