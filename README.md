@@ -59,8 +59,11 @@ bash <(curl -Ls https://raw.githubusercontent.com/xrayr-project/XrayR-release/ma
 [手动安装教程](https://crackair.gitbook.io/xrayr-project/xrayr-xia-zai-he-an-zhuang/install/manual)
 git clone https://github.com/late0001/XrayR
 cd XrayR/main
+
 go mod tidy
+
 go build -o XrayR -ldflags "-s -w"
+
 ./XrayR -config config.yml
 
 ## 配置文件及详细使用教程
