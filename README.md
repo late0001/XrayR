@@ -67,6 +67,11 @@ go build -o XrayR -ldflags "-s -w"
 
 ./XrayR -config config.yml
 
+## 可以使用shell 脱离终端运行
+#!/bin/bash
+./XrayR -config config.yml 2>&1 1>log_xrayR.log &
+#./XrayR -config config.yml 2>&1 1>/dev/null &
+
 ## 配置文件及详细使用教程
 
 [详细使用教程](https://crackair.gitbook.io/xrayr-project/)
